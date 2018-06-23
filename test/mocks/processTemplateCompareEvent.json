@@ -1,0 +1,12 @@
+{
+  "headers": {
+    "Request method": "POST",
+    "content-type": "application/json"
+  },
+  "body": {
+    "token": "12345678",
+    "channel_id": "C2147483705",
+    "action": "compare",
+    "template_name": "test-template"
+  }
+}

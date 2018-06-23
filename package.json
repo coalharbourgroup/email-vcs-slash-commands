@@ -1,0 +1,27 @@
+{
+  "name": "email-vcs-slash-command",
+  "version": "1.0.0",
+  "description": "Interface with EmailVCS via Slack Commands",
+  "repository": "git@github.com:coalharbourgroup/email-vcs-slack.git",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=text mocha --timeout 10000 --recursive"
+  },
+  "author": "ParkingMobility (@benedmunds)",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^15.2.6",
+    "aws-sdk": "^2.258.1",
+    "email-vcs": "git+https://github.com/coalharbourgroup/email-vcs.git#master",
+    "query-string": "^6.1.0",
+    "request": "^2.87.0",
+    "unzip": "^0.1.11",
+    "wkhtmltopdf": "^0.3.4"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1",
+    "mocha": "^5.1.0",
+    "nyc": "^11.8.0",
+    "pdf2json": "^1.1.7"
+  }
+}
