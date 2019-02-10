@@ -10,7 +10,7 @@
   "author": "ParkingMobility (@benedmunds)",
   "license": "MIT",
   "dependencies": {
-    "@octokit/rest": "^15.2.6",
+    "@octokit/rest": "^16.15.0",
     "aws-sdk": "^2.258.1",
     "email-vcs": "git+https://github.com/coalharbourgroup/email-vcs.git#master",
     "query-string": "^6.1.0",
@@ -22,6 +22,6 @@
     "dotenv": "^5.0.1",
     "mocha": "^5.1.0",
     "nyc": "^11.8.0",
-    "pdf2json": "^1.1.7"
+    "pdf2json": "^1.1.8"
   }
 }
