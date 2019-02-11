@@ -9,7 +9,8 @@ const unzip = require('unzip');
 const emailVcs = require('email-vcs');
 const wkhtmltopdf = require('wkhtmltopdf');
 const octokit = require('@octokit/rest')({
-  debug: debug
+  debug: debug,
+  auth: `token ${process.env.GITHUB_API_TOKEN}`
 });
 
 //set path for lambda
@@ -21,12 +22,6 @@ if (process.env['LAMBDA_TASK_ROOT']) {
 if (process.env['TRAVIS_BUILD_DIR']) {
   process.env['PATH'] = process.env['PATH'] + ':' + process.env['TRAVIS_BUILD_DIR'];
 }
-
-//authenticate to github
-octokit.authenticate({
-  type: 'oauth',
-  token: process.env.GITHUB_API_TOKEN
-});
 
 module.exports = (function(){
 
@@ -98,7 +93,7 @@ module.exports = (function(){
 
       for (let i=0; i<branches.length; i++) {
 
-        const fileContents = await octokit.repos.getContent({
+        const fileContents = await octokit.repos.getContents({
           owner: process.env.GITHUB_OWNER,
           repo: process.env.GITHUB_TEMPLATE_REPO,
           ref: branches[i],

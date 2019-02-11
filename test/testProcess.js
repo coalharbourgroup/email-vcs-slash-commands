@@ -146,8 +146,8 @@ describe('process.js', function() {
         };
       };
 
-      const getContent = bot.octokit.repos.getContent;
-      bot.octokit.repos.getContent = function(){
+      const getContents = bot.octokit.repos.getContents;
+      bot.octokit.repos.getContents = function(){
         return {
           data: template
         };
@@ -166,7 +166,7 @@ describe('process.js', function() {
 
       //cleanup
       bot.octokit.repos.getBranches = getBranches;
-      bot.octokit.repos.getContent = getContent;
+      bot.octokit.repos.getContents = getContents;
 
     });
   });
